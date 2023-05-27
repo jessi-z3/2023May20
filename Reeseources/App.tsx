@@ -6,6 +6,7 @@ import MissionPage from './components/MissionPage';
 import BravePage from './components/BravePage';
 import PledgePage from './components/PledgePage';
 import ProgramPage from './components/ProgramPage';
+import Help from './components/Help';
 import Home from './components/Home';
 
 const Stack = createNativeStackNavigator();
@@ -20,6 +21,7 @@ export default function App() {
         <Stack.Screen name="Program" component={ProgramPage} />
         <Stack.Screen name="BRAVE" component={BravePage} />
         <Stack.Screen name='Pledge' component={PledgePage} />
+        <Stack.Screen name='Help'component={Help} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, Dimensions } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 
 export default function MissionButton() {
   return (
@@ -13,7 +13,7 @@ export default function MissionButton() {
 const styles = StyleSheet.create({
   container: {
     width: 160,
-    height: Dimensions.get('window').height / 6.5,
+    height: 130,
     backgroundColor: '#CAE2FE',
     borderRadius: 45,
     justifyContent: 'center',

@@ -1,6 +1,7 @@
-import { View, StyleSheet, Image, Pressable } from "react-native";
+import { ScrollView, View, StyleSheet, Image, Text, Pressable, Dimensions } from "react-native";
 
 import BraveButton from "./BraveButton";
+import BraveSpotlight from "./BraveSpotlight";
 import Logo from "./Logo";
 import MissionButton from "./MissionButton";
 import PledgeButton from "./PledgeButton";
@@ -8,56 +9,79 @@ import ProgramButton from "./ProgramButton";
 
 export default function Home({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Logo />
-      <View style={styles.buttonContainer1}>
-        <Pressable onPress={() => navigation.navigate("MissionPage")}>
-          <MissionButton />
-        </Pressable>
-        <Pressable onPress={() => navigation.navigate("Program")}>
-          <ProgramButton />
-        </Pressable>
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.helpButtonContainer}>
+          <View style={styles.helpButton}>
+            <Pressable onPress={() => navigation.navigate('Help')}>
+              <Text style={styles.buttonText}>Get Help</Text>
+            </Pressable>
+          </View>
+        </View>
+        <Logo />
+        <View style={styles.buttonContainer1}>
+          <Pressable onPress={() => navigation.navigate('MissionPage')}>
+            <MissionButton />
+          </Pressable>
+          <Pressable onPress={() => navigation.navigate('Program')}>
+            <ProgramButton />
+          </Pressable>
+        </View>
+        <View style={styles.buttonContainer2}>
+          <Pressable onPress={() => navigation.navigate('BRAVE')}>
+            <BraveButton />
+          </Pressable>
+          <Pressable onPress={() => navigation.navigate('Pledge')}>
+            <PledgeButton />
+          </Pressable>
+        </View>
+        <Image
+          source={require('../assets/brave-logo2x.png')}
+          style={{width: 350, height: 150}}
+        />
+        <BraveSpotlight/>
       </View>
-      <View style={styles.buttonContainer2}>
-        <Pressable onPress={() => navigation.navigate("BRAVE")}>
-          <BraveButton />
-        </Pressable>
-        <Pressable onPress={() => navigation.navigate("Pledge")}>
-          <PledgeButton />
-        </Pressable>
-      </View>
-      <Image
-        source={require("../assets/brave-logo2x.png")}
-        style={{ width: 350, height: 150, padding: 5 }}
-      />
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  helpButtonContainer:{
+    alignItems: 'flex-end',
+    paddingTop: 35,
+  },
   container: {
-    flex: 1,
-    alignItems: "center",
     paddingTop: 15,
-    backgroundColor: "#96C5FC",
-    padding: 8,
-    justifyContent: "center",
+    backgroundColor: '#96C5FC',
+    padding: 15,
+    alignItems: 'center',
   },
   buttonContainer1: {
-    flex: 2,
-    flexDirection: "row",
+    flexDirection: 'row',
     width: 370,
-    height: 500,
-    justifyContent: "space-between",
+    height: 150,
+    justifyContent: 'space-between',
     padding: 12,
   },
   buttonContainer2: {
-    flex: 2,
-    flexDirection: "row",
+    flexDirection: 'row',
     width: 370,
-    height: 200,
-    justifyContent: "space-between",
-    alignItems: "center",
+    height: 150,
+    justifyContent: 'space-between',
+    alignItems: 'center',
     padding: 12,
+  },
+  helpButton: {
+    height: 30,
+    width: Dimensions.get('window').width / 4,
+    backgroundColor: '#CAE2FE',
+    borderRadius: 45,
+    justifyContent: 'center',
+  },
+  buttonText: {
+    color: '#7C97CE',
+    fontSize: 16,
+    textAlign: 'center',
+    fontFamily: 'Gabriela-Regular',
   },
 });
