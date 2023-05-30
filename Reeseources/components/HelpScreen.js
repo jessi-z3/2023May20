@@ -2,19 +2,32 @@ import { StyleSheet, Linking, ScrollView, View, Text,Pressable, Dimensions} from
 
 import { Table, TableWrapper, Row, Cell } from 'react-native-table-component';
 
-export default function Help({navigation: {goBack}}) {{
+export default function HelpScreen({navigation: {goBack}}) {{
     this.state = {
       tableHead: ['The Problem', 'What you can do'],
       tableData: [
         [
           //  NEED TO ADD some highlighting here to show the text is a button for calling
           'There has been a crime or someone is at immediate risk of harm.',
-          <Text onPress={() => Linking.openURL('tel:911')}>Call 911</Text>,
+          <Text
+            style={{
+              color: 'blue',
+              margin: 10,
+              fontFamily: 'Gabriela-Regular',
+              fontSize: 16,
+            }}
+            onPress={() => Linking.openURL('tel:911')}>
+            Call 911
+          </Text>,
         ],
         [
           //  NEED TO ADD some highlighting here to show the text is a button for calling
           'Someone is feeling hopeless, helpless, thinking of suicide.',
-          <Text onPress={() => Linking.openURL('tel:988')}>Call 988</Text>,
+          <Text
+            style={{color: 'blue', margin: 10, fontFamily: 'Gabriela-Regular', fontSize: 16,}}
+            onPress={() => Linking.openURL('tel:988')}>
+            Call 988
+          </Text>,
         ],
         [
           'Someone is acting differently than normal, such as always seeming sad or anxious, struggling to complete tasks, or not being able care for themselves.',
@@ -32,31 +45,37 @@ export default function Help({navigation: {goBack}}) {{
     };
     return (
       <View style={styles.container}>
-        <ScrollView>
-        <Text style={styles.paragraph}>
-          If you have done everything you can to resolve the situation and
-          nothing has worked, or someone is in immediate danger, there are ways
-          to get help.
-        </Text>
-        <Table borderStyle={{borderColor: '#7C97CE'}}>
-          <Row
-            data={state.tableHead}
-            style={styles.head}
-            textStyle={styles.text}
-          />
-          {state.tableData.map((rowData, index) => (
-            <TableWrapper key={index} style={styles.row}>
-              {rowData.map((cellData, cellIndex) => (
-                <Cell key={cellIndex} data={cellData} textStyle={styles.text} />
-              ))}
-            </TableWrapper>
-          ))}
-        </Table>
-      </ScrollView>
-      <Pressable style={styles.buttons} onPress={() => goBack()}>
-          <Text style={styles.textButton}>Back</Text>
-        </Pressable>
+        <ScrollView style={styles.scrollContainer}>
+          <Text style={styles.paragraph}>
+            If you have done everything you can to resolve the situation and
+            nothing has worked, or someone is in immediate danger, there are
+            ways to get help.
+          </Text>
+          <Table borderStyle={{borderColor: '#7C97CE'}}>
+            <Row
+              data={state.tableHead}
+              style={styles.head}
+              textStyle={styles.text}
+            />
+            {state.tableData.map((rowData, index) => (
+              <TableWrapper key={index} style={styles.row}>
+                {rowData.map((cellData, cellIndex) => (
+                  <Cell
+                    key={cellIndex}
+                    data={cellData}
+                    textStyle={styles.text}
+                  />
+                ))}
+              </TableWrapper>
+            ))}
+          </Table>
+        </ScrollView>
+        <View style={{padding: 15}}>
+          <Pressable style={styles.buttons} onPress={() => goBack()}>
+            <Text style={styles.textButton}>Back</Text>
+          </Pressable>
         </View>
+      </View>
     );
   }
 }
@@ -66,6 +85,11 @@ export const styles = StyleSheet.create({
     flex: 1,
     padding: 15,
     backgroundColor: '#96C5FC',
+    justifyContent: 'flex-start'
+  },
+  scrollContainer: {
+    flex: 1,
+    paddingVertical: 20,
   },
   paragraph: {
     color: '#FFFFFF',
@@ -75,12 +99,17 @@ export const styles = StyleSheet.create({
   },
   text: {
     margin: 10,
+    color: '#7C97CE',
+    fontFamily: 'Gabriela-Regular',
+    fontSize: 16,
   },
   head: {
     marginTop: 10,
+    color: 'white',
   },
   tableHead: {
     marginTop: 10,
+    color: 'white',
   },
   row: {flexDirection: 'row', backgroundColor: '#CAE2FE'},
   buttons: {

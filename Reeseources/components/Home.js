@@ -1,23 +1,39 @@
-import { ScrollView, View, StyleSheet, Image, Text, Pressable, Dimensions } from "react-native";
+import {
+  ScrollView,
+  View,
+  StyleSheet,
+  Image,
+  Text,
+  Pressable,
+  Dimensions,
+} from 'react-native';
 
-import BraveButton from "./BraveButton";
-import BraveSpotlight from "./BraveSpotlight";
-import Logo from "./Logo";
-import MissionButton from "./MissionButton";
-import PledgeButton from "./PledgeButton";
-import ProgramButton from "./ProgramButton";
+import BraveButton from './BraveButton';
+import BraveSpotlight from './BraveSpotlight';
+import Logo from './Logo';
+import MissionButton from './MissionButton';
+import PledgeButton from './PledgeButton';
+import ProgramButton from './ProgramButton';
 
-export default function Home({ navigation }) {
+export default function Home({navigation}) {
   return (
     <ScrollView>
+      <View style={styles.libraryButtonContainer}>
+        <Pressable onPress={() => navigation.navigate('BookList')}>
+          <Image
+            source={require('../assets/icons8-bookshelf-100.png')}
+            style={{width: 50, height: 50, borderRadius: 15}}
+          />
+        </Pressable>
+        <Pressable onPress={() => navigation.navigate('HelpScreen')}>
+          <Image
+            source={require('../assets/icons8-danger-100.png')}
+            style={{width: 50, height: 50, borderRadius: 15}}
+          />
+        </Pressable>
+      </View>
       <View style={styles.container}>
-        <View style={styles.helpButtonContainer}>
-          <View style={styles.helpButton}>
-            <Pressable onPress={() => navigation.navigate('Help')}>
-              <Text style={styles.buttonText}>Get Help</Text>
-            </Pressable>
-          </View>
-        </View>
+        <View style={styles.helpButtonContainer}></View>
         <Logo />
         <View style={styles.buttonContainer1}>
           <Pressable onPress={() => navigation.navigate('MissionPage')}>
@@ -39,16 +55,21 @@ export default function Home({ navigation }) {
           source={require('../assets/brave-logo2x.png')}
           style={{width: 350, height: 150}}
         />
-        <BraveSpotlight/>
+        <BraveSpotlight />
       </View>
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  helpButtonContainer:{
-    alignItems: 'flex-end',
-    paddingTop: 35,
+
+  libraryButtonContainer: {
+    backgroundColor: '#96C5FC',
+    paddingTop: 40,
+    paddingLeft: 10,
+    paddingRight:10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   container: {
     paddingTop: 15,

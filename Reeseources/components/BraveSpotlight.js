@@ -20,7 +20,7 @@ export default function BraveSpotlight({ navigation }) {
         />
         <Text style={styles.text}>
           Over the years, Reese has sent B.R.A.V.E. bracelets to every state,
-          even some in Spain.
+          even some to Spain.
         </Text>
         <Text style={styles.subHeaderText}>Buddy Bench</Text>
         <Image
@@ -38,9 +38,17 @@ export default function BraveSpotlight({ navigation }) {
           style={styles.image3}
         />
         <Text style={styles.text}>
-          Ava gives these out to elementary-aged
-          kids in her community to tie onto their backpacks as a visual reminder
-          to ALWAYS be kind.
+          Ava gives these out to elementary-aged kids in her community to tie
+          onto their backpacks as a visual reminder to ALWAYS be kind.
+        </Text>
+        <Text style={styles.subHeaderText}>B.R.A.V.E. Bunnies</Text>
+        <Image
+          source={require('../assets/YT_Gianna_Capri_1_t1100.jpg')}
+          style={styles.image4}
+        />
+        <Text style={styles.text}>
+          Gianna passed out “B.R.A.V.E Bunnies” to every student at Morning Star
+          School as a reminder to be kind to all.
         </Text>
       </View>
     );
@@ -67,6 +75,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     textAlign: 'center',
     fontFamily: 'Dancing Script',
+    fontWeight: '700',
     paddingTop: 20,
   },
   text: {
@@ -85,6 +94,10 @@ const styles = StyleSheet.create({
     height: 500,
   },
   image3: {
+    width: 375,
+    height: 750,
+  },
+  image4: {
     width: 375,
     height: 750,
   },
