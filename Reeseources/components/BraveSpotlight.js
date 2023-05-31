@@ -32,15 +32,7 @@ export default function BraveSpotlight({ navigation }) {
           buddy bench, so no kid has to sit alone. It takes over 150 lbs. of
           caps to make one. Way to Reese-cycle!
         </Text>
-        <Text style={styles.subHeaderText}>B.R.A.V.E. Bandanas</Text>
-        <Image
-          source={require('../assets/bandanas.jpg')}
-          style={styles.image3}
-        />
-        <Text style={styles.text}>
-          Ava gives these out to elementary-aged kids in her community to tie
-          onto their backpacks as a visual reminder to ALWAYS be kind.
-        </Text>
+{/*      Need to obtain permission from Gianna's parents to use this   
         <Text style={styles.subHeaderText}>B.R.A.V.E. Bunnies</Text>
         <Image
           source={require('../assets/YT_Gianna_Capri_1_t1100.jpg')}
@@ -49,7 +41,7 @@ export default function BraveSpotlight({ navigation }) {
         <Text style={styles.text}>
           Gianna passed out “B.R.A.V.E Bunnies” to every student at Morning Star
           School as a reminder to be kind to all.
-        </Text>
+        </Text> */}
       </View>
     );
 }

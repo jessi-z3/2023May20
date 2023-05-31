@@ -27,12 +27,6 @@ export default function BookList({navigation: {goBack}}) {
           Something Else wants to be like everybody else but finds he isn’t.
           This is a lovely story about accepting people’s differences
         </Text>
-        <Text style={styles.authorText}>De Paola, Tomi</Text>
-        <Text style={styles.bookTitleText}>Oliver Button is a Sissy</Text>
-        <Text style={styles.text}>
-          Oliver Button is teased by the boys in his class for pursuing his
-          dream of being a tap dancer
-        </Text>
         <Text style={styles.authorText}>Jenkins, Emily</Text>
         <Text style={styles.bookTitleText}>The Little Bit Scary People</Text>
         <Text style={styles.text}>
