@@ -49,6 +49,7 @@ export const styles = StyleSheet.create({
   pdf: {
     flex: 0.95,
     width: Dimensions.get('window').width,
+    backgroundColor: '#96C5FC',
   },
   buttons: {
     height: 30,
@@ -59,10 +60,11 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   container: {
-    flex: 0.03,
+    flex: 0.05,
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: 15,
+    backgroundColor: '#96C5FC',
   },
   text: {
     color: '#7C97CE',

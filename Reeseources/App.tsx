@@ -6,10 +6,12 @@ import MissionPage from './components/MissionPage';
 import BravePage from './components/BravePage';
 import PledgePage from './components/PledgePage';
 import ProgramPage from './components/ProgramPage';
-import Help from './components/HelpScreen';
 import Home from './components/Home';
 import BookList from './components/BookList';
 import HelpScreen from './components/HelpScreen';
+import Activities from './components/Activities';
+import Quiz from './components/Quiz';
+// import ReportBullying from './components/ReportBullying';
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -25,6 +27,10 @@ export default function App() {
         <Stack.Screen name='Pledge' component={PledgePage} />
         <Stack.Screen name='HelpScreen' component={HelpScreen} />
         <Stack.Screen name='BookList' component={BookList} />
+        {/* <Stack.Screen name='Report' component={ReportBullying} /> */}
+        <Stack.Screen name='Activities' component={Activities} />
+        <Stack.Screen name='Quiz' component={Quiz} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

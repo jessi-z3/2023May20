@@ -25,6 +25,12 @@ export default function Home({navigation}) {
             style={{width: 50, height: 50, borderRadius: 15}}
           />
         </Pressable>
+        <Pressable onPress={() => navigation.navigate('Activities')}>
+          <Image
+            source={require('../assets/icons8-crayon-100.png')}
+            style={{width: 50, height: 50, borderRadius: 15}}
+          />
+        </Pressable>
         <Pressable onPress={() => navigation.navigate('HelpScreen')}>
           <Image
             source={require('../assets/icons8-danger-100.png')}
@@ -43,6 +49,7 @@ export default function Home({navigation}) {
             <ProgramButton />
           </Pressable>
         </View>
+
         <View style={styles.buttonContainer2}>
           <Pressable onPress={() => navigation.navigate('BRAVE')}>
             <BraveButton />
@@ -53,7 +60,7 @@ export default function Home({navigation}) {
         </View>
         <Image
           source={require('../assets/brave-logo2x.png')}
-          style={{width: 350, height: 150}}
+          style={{width: 325, height: 125, marginTop: 30}}
         />
         <BraveSpotlight />
       </View>
@@ -62,14 +69,13 @@ export default function Home({navigation}) {
 }
 
 const styles = StyleSheet.create({
-
   libraryButtonContainer: {
     backgroundColor: '#96C5FC',
     paddingTop: 40,
     paddingLeft: 10,
-    paddingRight:10,
+    paddingRight: 10,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
   },
   container: {
     paddingTop: 15,
@@ -81,16 +87,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: 370,
     height: 150,
-    justifyContent: 'space-between',
-    padding: 12,
+    justifyContent: 'space-evenly',
+    padding: 5,
   },
   buttonContainer2: {
     flexDirection: 'row',
     width: 370,
     height: 150,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 12,
+    justifyContent: 'space-evenly',
+    padding: 5,
   },
   helpButton: {
     height: 30,

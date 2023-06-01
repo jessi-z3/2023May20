@@ -12,6 +12,6 @@ export default function Logo(){
 const styles = StyleSheet.create({
   outerEdge:{
     alignItems: 'center',
-    padding: 20,
+    padding: 35,
   },
 })

@@ -1,8 +1,8 @@
 import { StyleSheet, Linking, ScrollView, View, Text,Pressable, Dimensions} from 'react-native';
-
+import React from 'react';
 import { Table, TableWrapper, Row, Cell } from 'react-native-table-component';
 
-export default function HelpScreen({navigation: {goBack}}) {{
+export default function HelpScreen({navigation, navigation: {goBack}}) {{
     this.state = {
       tableHead: ['The Problem', 'What you can do'],
       tableData: [
@@ -18,15 +18,24 @@ export default function HelpScreen({navigation: {goBack}}) {{
             }}
             onPress={() => Linking.openURL('tel:911')}>
             Call 911
+            <Text style={styles.text}>{'\nor\n'}</Text>
+            <Text onPress={() => Linking.openURL('sms:911')}>Text 911</Text>
           </Text>,
         ],
         [
           //  NEED TO ADD some highlighting here to show the text is a button for calling
           'Someone is feeling hopeless, helpless, thinking of suicide.',
           <Text
-            style={{color: 'blue', margin: 10, fontFamily: 'Gabriela-Regular', fontSize: 16,}}
+            style={{
+              color: 'blue',
+              margin: 10,
+              fontFamily: 'Gabriela-Regular',
+              fontSize: 16,
+            }}
             onPress={() => Linking.openURL('tel:988')}>
             Call 988
+            <Text style={styles.text}>{'\nor\n'}</Text>
+            <Text onPress={() => Linking.openURL('sms:988')}>Text 988</Text>
           </Text>,
         ],
         [
@@ -39,23 +48,34 @@ export default function HelpScreen({navigation: {goBack}}) {{
         ],
         [
           'The school is not adequately addressing harassment based on race, color, national origin, sex (including sexual orientation and gender identity), disability, or religion.',
-          'Contact:\n- School superintendent\n- State Department of Education\n- U.S. Department of Education, Office for Civil Rights\n- U.S. Department of Justice, Civil Rights Division',
+          'Contact:\n- School superintendent\n- State Department of Education\n- U.S. Department of Education, Office for Civil Rights\n- U.S. Department of Justice, Civil Rights Division\n',
         ],
       ],
     };
     return (
       <View style={styles.container}>
-        <ScrollView style={styles.scrollContainer}>
+        <ScrollView style={[styles.scrollContainer, {marginBottom:15} ]}>
           <Text style={styles.paragraph}>
             If you have done everything you can to resolve the situation and
             nothing has worked, or someone is in immediate danger, there are
             ways to get help.
           </Text>
+          {/* <Pressable
+            style={styles.reportButton}
+            onPress={() => navigation.navigate('Report')}>
+            <Text
+              style={[
+                styles.paragraph,
+                {textAlign: 'center', textTransform: 'uppercase'},
+              ]}>
+              Anonymously Report Bullying
+            </Text>
+          </Pressable> */}
           <Table borderStyle={{borderColor: '#7C97CE'}}>
             <Row
               data={state.tableHead}
               style={styles.head}
-              textStyle={styles.text}
+              textStyle={styles.paragraph}
             />
             {state.tableData.map((rowData, index) => (
               <TableWrapper key={index} style={styles.row}>
@@ -70,7 +90,7 @@ export default function HelpScreen({navigation: {goBack}}) {{
             ))}
           </Table>
         </ScrollView>
-        <View style={{padding: 15}}>
+        <View style={{padding: 5}}>
           <Pressable style={styles.buttons} onPress={() => goBack()}>
             <Text style={styles.textButton}>Back</Text>
           </Pressable>
@@ -85,31 +105,31 @@ export const styles = StyleSheet.create({
     flex: 1,
     padding: 15,
     backgroundColor: '#96C5FC',
-    justifyContent: 'flex-start'
+    justifyContent: 'center',
   },
   scrollContainer: {
     flex: 1,
     paddingVertical: 20,
+    alignContent: 'center',
   },
   paragraph: {
     color: '#FFFFFF',
     fontSize: 20,
     fontFamily: 'Gabriela-Regular',
-    paddingTop: 35,
   },
   text: {
-    margin: 10,
+    margin: 12,
     color: '#7C97CE',
     fontFamily: 'Gabriela-Regular',
     fontSize: 16,
   },
   head: {
     marginTop: 10,
-    color: 'white',
+    color: '#FFFFFF',
   },
   tableHead: {
-    marginTop: 10,
-    color: 'white',
+    marginBottom: 10,
+    color: '#FFFFFF',
   },
   row: {flexDirection: 'row', backgroundColor: '#CAE2FE'},
   buttons: {
@@ -124,5 +144,15 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     fontFamily: 'Gabriela-Regular',
+  },
+  reportButton: {
+    height: 35,
+    width: 360,
+    backgroundColor: '#D30000',
+    borderRadius: 15,
+    justifyContent: 'center',
+    textAlign: 'center',
+    marginVertical: 40,
+    alignSelf: 'center',
   },
 });
