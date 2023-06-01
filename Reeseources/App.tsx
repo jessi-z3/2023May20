@@ -11,6 +11,8 @@ import BookList from './components/BookList';
 import HelpScreen from './components/HelpScreen';
 import Activities from './components/Activities';
 import Quiz from './components/Quiz';
+import Coloring from './components/Coloring';
+import ColoringPage from './components/ColoringPage';
 // import ReportBullying from './components/ReportBullying';
 
 const Stack = createNativeStackNavigator();
@@ -30,6 +32,8 @@ export default function App() {
         {/* <Stack.Screen name='Report' component={ReportBullying} /> */}
         <Stack.Screen name='Activities' component={Activities} />
         <Stack.Screen name='Quiz' component={Quiz} />
+        <Stack.Screen name='Coloring' component={Coloring} />
+        <Stack.Screen name='ColoringPage' component={ColoringPage} />
 
       </Stack.Navigator>
     </NavigationContainer>

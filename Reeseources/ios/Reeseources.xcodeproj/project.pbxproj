@@ -16,6 +16,7 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		CC02EF5F2A219557005627A2 /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC02EF5E2A219557005627A2 /* DancingScript-Bold.ttf */; };
 		CC02EF612A219597005627A2 /* Gabriela-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC02EF602A219596005627A2 /* Gabriela-Regular.ttf */; };
+		CC60C30E2A292B8C0093AD13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC60C30D2A292B8C0093AD13 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-Reeseources-ReeseourcesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reeseources-ReeseourcesTests.release.xcconfig"; path = "Target Support Files/Pods-Reeseources-ReeseourcesTests/Pods-Reeseources-ReeseourcesTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC02EF5E2A219557005627A2 /* DancingScript-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-Bold.ttf"; sourceTree = "<group>"; };
 		CC02EF602A219596005627A2 /* Gabriela-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gabriela-Regular.ttf"; path = "../../assets/fonts/Gabriela-Regular.ttf"; sourceTree = "<group>"; };
+		CC60C30D2A292B8C0093AD13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 		13B07FAE1A68108700A75B9A /* Reeseources */ = {
 			isa = PBXGroup;
 			children = (
+				CC60C30D2A292B8C0093AD13 /* Assets.xcassets */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -260,6 +263,7 @@
 				CC02EF5F2A219557005627A2 /* DancingScript-Bold.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				CC02EF612A219597005627A2 /* Gabriela-Regular.ttf in Resources */,
+				CC60C30E2A292B8C0093AD13 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +471,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reeseources.app/Reeseources";
 			};
 			name = Debug;
@@ -491,6 +499,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reeseources.app/Reeseources";
 			};
 			name = Release;
@@ -502,7 +514,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_ASSET_PATHS = "../assets/fonts/Gabriela-Regular.ttf fonts/DancingScript-Bold.ttf";
+				DEVELOPMENT_ASSET_PATHS = "Assets.xcassets ../assets/fonts/Gabriela-Regular.ttf fonts/DancingScript-Bold.ttf";
 				DEVELOPMENT_TEAM = AG7M436GF7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Reeseources/Info.plist;
@@ -537,7 +549,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_ASSET_PATHS = "../assets/fonts/Gabriela-Regular.ttf fonts/DancingScript-Bold.ttf";
+				DEVELOPMENT_ASSET_PATHS = "Assets.xcassets ../assets/fonts/Gabriela-Regular.ttf fonts/DancingScript-Bold.ttf";
 				DEVELOPMENT_TEAM = AG7M436GF7;
 				INFOPLIST_FILE = Reeseources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Reese-ources";

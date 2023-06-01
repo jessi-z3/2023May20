@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   SafeAreaView,
   View,
@@ -8,18 +9,19 @@ import {
   StyleSheet,
   Alert,
 } from 'react-native';
+
 import QuizeSingleChoice from 'react-native-react-native-quiz-single-choice';
 
-export default function Quiz({navigation: {goBack}}) {
+export default function Quiz({navigation, navigation: {goBack}}) {
   const data = [
     {
-      question: 'Nearly one-third of american teens are involved in bullying.',
+      question: 'Nearly one-third of American teens are involved in bullying.',
       optionA: 'True',
       optionB: 'False',
       answer: 'True',
     },
     {
-      question: 'Less than 10% of american teens admit to bullying others.',
+      question: 'Less than 10% of American teens admit to bullying others.',
       optionA: 'True',
       optionB: 'False',
       answer: 'False',
@@ -135,13 +137,24 @@ export default function Quiz({navigation: {goBack}}) {
           }}
           buttonsContainerStyle={{marginTop: 'auto'}}
           onEnd={results => {
-            console.log(results);
+            const correct = results.filter(result => result.isRight == true);
+            function ObjectLength(correct) {
+              var length = 0;
+              for (var key in correct) {
+                if (correct.hasOwnProperty(key)) {
+                  ++length;
+                }
+              }
+              return length;
             }
-          }
+            const points = ObjectLength(correct) * 10;
+            console.log('Your Score: ' + points);
+            Alert.alert('Your Score: ' + points);
+          }}
           data={data}
         />
       </View>
-      <View style={{padding: 5}}>
+      <View style={{padding: 5, justifyContent: 'space-between', flexDirection: 'row'}}>
         <Pressable style={styles.backButton} onPress={() => goBack()}>
           <Text style={styles.backButtonText}>Back</Text>
         </Pressable>

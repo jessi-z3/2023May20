@@ -1,5 +1,7 @@
 import React from "react";
+
 import {SafeAreaView, ScrollView, View, Text, Pressable, Dimensions, StyleSheet} from 'react-native';
+
 import QuizeSingleChoice from 'react-native-react-native-quiz-single-choice';
 
 
@@ -11,6 +13,9 @@ export default function Activities({navigation, navigation: {goBack}}){
           <ScrollView>
             <Pressable onPress={() => navigation.navigate('Quiz')}>
               <Text style={styles.activityText}>Take the Quiz</Text>
+            </Pressable>
+            <Pressable onPress={() => navigation.navigate('Coloring')}>
+              <Text style={styles.activityText}>Coloring Pages</Text>
             </Pressable>
           </ScrollView>
         </View>
