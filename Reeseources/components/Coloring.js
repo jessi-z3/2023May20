@@ -16,16 +16,22 @@ export default function Coloring({navigation, navigation: {goBack}}) {
                 style={styles.thumbnail}
               />
             </Pressable>
+            <Pressable onPress={() => navigation.navigate('ColoringPage', {selectedPage: '../assets/PDFs/Kindness1-2.pdf', selectedPDF: require('../assets/PDFs/Kindness1-2.pdf')})}>
+
             <Image
               source={require('../assets/Kindness1-2.jpg')}
               style={styles.thumbnail}
             />
+            </Pressable>
           </View>
           <View style={styles.innerContainer}>
+                        <Pressable onPress={() => navigation.navigate('ColoringPage', {selectedPage: '../assets/PDFs/Kindness1-3.pdf', selectedPDF: require('../assets/PDFs/Kindness1-3.pdf')})}>
+
             <Image
               source={require('../assets/Kindness1-3.jpg')}
               style={styles.thumbnail}
             />
+            </Pressable>
           </View>
         </ScrollView>
       </View>
