@@ -42,19 +42,43 @@ export default function Home({navigation}) {
         <View style={styles.helpButtonContainer}></View>
         <Logo />
         <View style={styles.buttonContainer1}>
-          <Pressable onPress={() => navigation.navigate('MissionPage')}>
+          <Pressable
+            onPress={() =>
+              navigation.navigate('PDF', {
+                selectedPage: '../assets/PDFs/Mission.pdf',
+                selectedPDF: require('../assets/PDFs/Mission.pdf'),
+              })
+            }>
             <MissionButton />
           </Pressable>
-          <Pressable onPress={() => navigation.navigate('Program')}>
+          <Pressable
+            onPress={() =>
+              navigation.navigate('PDF', {
+                selectedPage: '../assets/PDFs/Program.pdf',
+                selectedPDF: require('../assets/PDFs/Program.pdf'),
+              })
+            }>
             <ProgramButton />
           </Pressable>
         </View>
 
         <View style={styles.buttonContainer2}>
-          <Pressable onPress={() => navigation.navigate('BRAVE')}>
+          <Pressable
+            onPress={() =>
+              navigation.navigate('PDF', {
+                selectedPage: '../assets/PDFs/BRAVE.pdf',
+                selectedPDF: require('../assets/PDFs/BRAVE.pdf'),
+              })
+            }>
             <BraveButton />
           </Pressable>
-          <Pressable onPress={() => navigation.navigate('Pledge')}>
+          <Pressable
+            onPress={() =>
+              navigation.navigate('PDF', {
+                selectedPage: '../assets/PDFs/Pledge.pdf',
+                selectedPDF: require('../assets/PDFs/Pledge.pdf'),
+              })
+            }>
             <PledgeButton />
           </Pressable>
         </View>

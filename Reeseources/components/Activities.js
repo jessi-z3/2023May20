@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 15,
     justifyContent: 'flex-start',
+    alignItems: 'center',
   },
   backButton: {
     height: 30,
@@ -97,7 +98,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer1: {
     flexDirection: 'row',
-    width: 370,
+    width: Dimensions.get('window').width,
     height: 150,
     justifyContent: 'space-evenly',
     padding: 5,
