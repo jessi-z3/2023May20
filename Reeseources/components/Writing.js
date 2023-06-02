@@ -1,44 +1,17 @@
-import React from "react";
-
-import {SafeAreaView, View, Text, Pressable, Dimensions, StyleSheet} from 'react-native';
-
-
-
-export default function Activities({navigation, navigation: {goBack}}){
+import {
+  SafeAreaView,
+  View,
+  Text,
+  Pressable,
+  Dimensions,
+  StyleSheet,
+} from 'react-native';
+export default function Writing({navigation: {goBack}}){
       
     return (
       <SafeAreaView style={styles.outerContainer}>
         <View style={styles.innerContainer}>
-          <Text style={styles.activityText}>Activities</Text>
-          <View style={styles.buttonContainer1}>
-            <Pressable
-              style={styles.container}
-              onPress={() => navigation.navigate('Quiz')}>
-              <Text style={styles.paragraph}>Quiz</Text>
-            </Pressable>
-            <Pressable
-              style={styles.container}
-              onPress={() => navigation.navigate('Coloring')}>
-              <Text style={styles.paragraph}>Coloring Pages</Text>
-            </Pressable>
-          </View>
-          <View style={styles.buttonContainer1}>
-            <Pressable
-              style={styles.container}
-              onPress={() =>
-                navigation.navigate('ColoringPage', {
-                  selectedPage: '../assets/PDFs/Kindness-Catcher.pdf',
-                  selectedPDF: require('../assets/PDFs/Kindness-Catcher.pdf'),
-                })
-              }>
-              <Text style={styles.paragraph}>Kindness Catcher</Text>
-            </Pressable>
-            <Pressable
-              style={styles.container}
-              onPress={() => navigation.navigate('Writing')}>
-              <Text style={styles.paragraph}>Writing Prompts</Text>
-            </Pressable>
-          </View>
+          <Text style={styles.activityText}>Writing Prompts</Text>
         </View>
         <View style={{padding: 5}}>
           <Pressable style={styles.backButton} onPress={() => goBack()}>
@@ -49,6 +22,7 @@ export default function Activities({navigation, navigation: {goBack}}){
     );
 
 }
+
 const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,

@@ -13,6 +13,7 @@ import Activities from './components/Activities';
 import Quiz from './components/Quiz';
 import Coloring from './components/Coloring';
 import ColoringPage from './components/ColoringPage';
+import Writing from './components/Writing';
 // import ReportBullying from './components/ReportBullying';
 
 const Stack = createNativeStackNavigator();
@@ -34,6 +35,7 @@ export default function App() {
         <Stack.Screen name='Quiz' component={Quiz} />
         <Stack.Screen name='Coloring' component={Coloring} />
         <Stack.Screen name='ColoringPage' component={ColoringPage} />
+        <Stack.Screen name='Writing' component={Writing} />
 
       </Stack.Navigator>
     </NavigationContainer>

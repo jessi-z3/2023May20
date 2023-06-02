@@ -295,7 +295,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 15,
     backgroundColor: '#96C5FC',
-    padding: 15,
+    padding: 5,
   },
   buttons: {
     height: 30,
@@ -303,7 +303,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#CAE2FE',
     borderRadius: 45,
     justifyContent: 'center',
-    paddingHorizontal: 20,
   },
   buttonText: {
     color: '#7C97CE',
