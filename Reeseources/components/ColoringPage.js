@@ -11,13 +11,15 @@ import {
 import Pdf from 'react-native-pdf';
 
 export default function ColoringPage({route, navigation: {goBack}}) {
-    const selectedPage = route.params;
-    const source = require('../assets/PDFs/Kindness1-1.pdf');
+    const {selectedPage, selectedPDF} = route.params;
+    const source = selectedPage;
+    console.log(source)
   const onShare = async () => {
+
     try {
       const shareOptions = {
         message: '',
-        url: 'file://' + selectedPage,
+        url: 'file:///' + source,
       };
       Share.share(shareOptions)
         .then(result => {
@@ -32,9 +34,11 @@ export default function ColoringPage({route, navigation: {goBack}}) {
       Alert.alert(error.message);
     }
   };
+
   return (
+    
     <>
-      <Pdf source={source} style={styles.pdf} />
+      <Pdf source={selectedPDF} style={styles.pdf} />
       <View style={styles.container}>
         <Pressable style={styles.buttons} onPress={() => goBack()}>
           <Text style={styles.text}>Back</Text>

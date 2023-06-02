@@ -10,7 +10,7 @@ export default function Coloring({navigation, navigation: {goBack}}) {
         <ScrollView>
           <Text style={styles.activityText}>Coloring Pages</Text>
           <View style={styles.innerContainer}>
-            <Pressable onPress={() => navigation.navigate('ColoringPage', {selectedPage: '../assets/PDFs/Kindness1-1.pdf'})}>
+            <Pressable onPress={() => navigation.navigate('ColoringPage', {selectedPage: '../assets/PDFs/Kindness1-1.pdf', selectedPDF: require('../assets/PDFs/Kindness1-1.pdf')})}>
               <Image
                 source={require('../assets/Kindness1-1.jpg')}
                 style={styles.thumbnail}
