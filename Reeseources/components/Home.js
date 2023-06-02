@@ -95,7 +95,7 @@ export default function Home({navigation}) {
 const styles = StyleSheet.create({
   libraryButtonContainer: {
     backgroundColor: '#96C5FC',
-    paddingTop: 40,
+    paddingTop: 55,
     paddingLeft: 10,
     paddingRight: 10,
     flexDirection: 'row',

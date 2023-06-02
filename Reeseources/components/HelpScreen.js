@@ -1,5 +1,7 @@
 import { StyleSheet, Linking, ScrollView, View, Text,Pressable, Dimensions} from 'react-native';
+
 import React from 'react';
+
 import { Table, TableWrapper, Row, Cell } from 'react-native-table-component';
 
 export default function HelpScreen({navigation, navigation: {goBack}}) {{
@@ -109,7 +111,7 @@ export const styles = StyleSheet.create({
   },
   scrollContainer: {
     flex: 1,
-    paddingVertical: 20,
+    paddingVertical: 40,
     alignContent: 'center',
   },
   paragraph: {
